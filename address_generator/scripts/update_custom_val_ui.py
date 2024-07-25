@@ -9,10 +9,10 @@
 
 
 def onOffToOn(channel, sampleIndex, val, prev):
-    parent_name = op("value_name")[0, 0]
+    parent_name = op("value_name")[0, 0].val
     if channel.name != parent_name:
         op("select_val").par.value0.reset()
-    print(channel.name)
+    # print(channel.name)
     return
 
 

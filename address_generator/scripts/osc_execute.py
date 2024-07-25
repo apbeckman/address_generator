@@ -4,12 +4,10 @@ source = op("osc_table")
 def row_to_osc(row):
     try:
         out = op("oscres").sendOSC(source[row, 0].val, [float(source[row, 1].val)])
+        return out
     except:
-        out = op("oscres").sendOSC(
-            "/" + source[row, 0].val, [float(source[row, 1].val)]
-        )
+        pass
     # print(row)
-    return out
 
 
 def onTableChange(dat):
