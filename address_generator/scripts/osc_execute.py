@@ -1,4 +1,4 @@
-source = op("osc_table")
+source = op("osc_table_res")
 
 
 def row_to_osc(row):

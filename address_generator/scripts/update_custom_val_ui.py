@@ -10,6 +10,16 @@
 
 def onOffToOn(channel, sampleIndex, val, prev):
     parent_name = op("value_name")[0, 0].val
+    order = op('../saved_names_sorted').col(0, val=True)
+    try: 
+        align_order = order.index(parent_name)
+    except:
+        align_order = 99
+    if parent().par.alignorder != align_order:
+        try:
+            parent().par.alignorder = align_order
+        except:
+            pass
     if channel.name != parent_name:
         op("select_val").par.value0.reset()
     # print(channel.name)
